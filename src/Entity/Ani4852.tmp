@@ -36,11 +36,6 @@ class Animal
      */
     private $poids;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $dangereux;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -90,18 +85,6 @@ class Animal
     public function setPoids(int $poids): self
     {
         $this->poids = $poids;
-
-        return $this;
-    }
-
-    public function getDangereux(): ?bool
-    {
-        return $this->dangereux;
-    }
-
-    public function setDangereux(bool $dangereux): self
-    {
-        $this->dangereux = $dangereux;
 
         return $this;
     }

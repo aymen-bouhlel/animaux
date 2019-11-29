@@ -14,6 +14,8 @@ class AnimalFixtures extends Fixture
         $a1->setNom("Chien")
             ->setDescription("un animal domistique")
             ->setImage("chien.png")
+            ->setPoids(10)
+            ->setDangereux(false)
         ;
         $manager->persist($a1);
 
@@ -21,6 +23,8 @@ class AnimalFixtures extends Fixture
         $a2->setNom("Cochon")
             ->setDescription("un animal d'élevage")
             ->setImage("cochon.png")
+            ->setPoids(300)
+            ->setDangereux(false)
         ;
         $manager->persist($a2);
 
@@ -28,6 +32,8 @@ class AnimalFixtures extends Fixture
         $a3->setNom("Serpent")
             ->setDescription("un animal dangereux")
             ->setImage("serpent.png")
+            ->setPoids(5)
+            ->setDangereux(true)
         ;
         $manager->persist($a3);
 
@@ -35,6 +41,8 @@ class AnimalFixtures extends Fixture
         $a4->setNom("Crocodile")
             ->setDescription("un animal trés dangereux")
             ->setImage("croco.png")
+            ->setPoids(500)
+            ->setDangereux(true)
         ;
         $manager->persist($a4);
 
@@ -42,6 +50,8 @@ class AnimalFixtures extends Fixture
         $a5->setNom("Requin")
             ->setDescription("un animal marin trés dangereux")
             ->setImage("requin.png")
+            ->setPoids(800)
+            ->setDangereux(true)
         ;
         $manager->persist($a5);
 
