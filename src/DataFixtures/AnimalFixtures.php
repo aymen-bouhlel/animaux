@@ -40,7 +40,7 @@ class AnimalFixtures extends Fixture
         $a4 = new Animal();
         $a4->setNom("Crocodile")
             ->setDescription("un animal trés dangereux")
-            ->setImage("croco.png")
+            ->setImage("crocodile.png")
             ->setPoids(500)
             ->setDangereux(true)
         ;
