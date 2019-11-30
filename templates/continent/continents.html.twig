@@ -8,7 +8,7 @@
 
 {% block body %}
     {% for continent in continents %}
-        <h2 class="border-bottom border-primary">{{ continent.libelle }}</h2>
+        <h2 class="border-bottom border-primary"><a href="{{ path('afficher_continent', {'id' : continent.id}) }}">{{ continent.libelle }}</a></h2>
         <div class="row">
             {% for animal in continent.animaux %}
                 <div class="col-6">
