@@ -9,7 +9,7 @@
 {% block body %}
     <div class="row allign-items-center">
         <div class="col-2 text-center">
-            <img src="{{ asset('images/' ~ animal.nom) ~ '.png' }}" >
+            <img src="{{ asset('images/' ~ animal.image) }}" >
         </div>
         <div class="col-auto">
             <div>Description: {{ animal.description }}</div>
@@ -20,6 +20,9 @@
                 {% else %}
                     <span class="badge badge-success">NON</span>
                 {% endif %}
+            </div>
+            <div>
+                <a href="{{ path('afficher_famille', {'id' : animal.famille.id}) }}" class="btn btn-primary">{{ animal.famille.libelle }}</a>
             </div>
         </div
     </div>

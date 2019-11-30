@@ -8,7 +8,7 @@
 
 {% block body %}
     {% for famille in familles %}
-        <h2 class="border-bottom border-primary">{{ famille.libelle | capitalize  }}</h2> 
+        <h2 class="border-bottom border-primary"><a href="{{ path('afficher_famille', {'id' : famille.id}) }}">{{ famille.libelle | capitalize  }}</a></h2> 
         <div>{{ famille.description }}</div>
         <div class="row">
             {% for animal in famille.animaux %}
