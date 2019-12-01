@@ -3,7 +3,9 @@
 namespace App\DataFixtures;
 
 use App\Entity\Animal;
+use App\Entity\Dispose;
 use App\Entity\Famille;
+use App\Entity\Personne;
 use App\Entity\Continent;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -12,6 +14,18 @@ class AnimalFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
+        $personne1 = new Personne();
+        $personne1->setNom("Milo");
+        $manager->persist($personne1);
+
+        $personne2 = new Personne();
+        $personne2->setNom("Tya");
+        $manager->persist($personne2);
+
+        $personne3 = new Personne();
+        $personne3->setNom("Lili");
+        $manager->persist($personne3);
+
         $continent1 = new Continent();
         $continent1->setLibelle("Europe");
         $manager->persist($continent1);
@@ -115,6 +129,47 @@ class AnimalFixtures extends Fixture
         ;
         $manager->persist($a5);
 
+        $dispose1 = new Dispose();
+        $dispose1->setPersonne($personne1)
+                ->setAnimal($a1)
+                ->setNb(30)
+        ;
+        $manager->persist($dispose1);
+
+        $dispose2 = new Dispose();
+        $dispose2->setPersonne($personne1)
+                ->setAnimal($a2)
+                ->setNb(10)
+        ;
+        $manager->persist($dispose2);
+
+        $dispose3 = new Dispose();
+        $dispose3->setPersonne($personne1)
+                ->setAnimal($a3)
+                ->setNb(2)
+        ;
+        $manager->persist($dispose3);
+
+        $dispose4 = new Dispose();
+        $dispose4->setPersonne($personne2)
+                ->setAnimal($a3)
+                ->setNb(5)
+        ;
+        $manager->persist($dispose4);
+
+        $dispose5 = new Dispose();
+        $dispose5->setPersonne($personne2)
+                ->setAnimal($a4)
+                ->setNb(30)
+        ;
+        $manager->persist($dispose5);
+
+        $dispose6 = new Dispose();
+        $dispose6->setPersonne($personne3)
+                ->setAnimal($a5)
+                ->setNb(20)
+        ;
+        $manager->persist($dispose6);
 
         $manager->flush();
     }
