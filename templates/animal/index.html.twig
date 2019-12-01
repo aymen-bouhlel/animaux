@@ -25,7 +25,7 @@
                 </div>
                 <div>
                     {% for dispose in animal.disposes %}
-                        <a href="" class="btn btn-info">{{ dispose.personne.nom }}</a>
+                        <a href="{{ path('afficher_personne', {'id' : dispose.personne.id}) }}" class="btn btn-info">{{ dispose.personne.nom }}</a>
                     {% endfor %}  
                 </div>
             </div>
